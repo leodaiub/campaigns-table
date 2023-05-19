@@ -17,6 +17,7 @@ export default function DateRangePicker() {
         onDateChange={updateDateRange as any}
         propsConfigs={{
           inputProps: {
+            role: "datePicker",
             placeholder: "Select date range...",
           },
         }}

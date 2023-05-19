@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { campaignsList } from "../campaignsData";
+import { campaignsList } from "../data/campaignsData";
 import { isAfter } from "date-fns";
 import { ICampaign } from "../types";
 

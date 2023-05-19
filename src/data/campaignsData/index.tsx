@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-refresh/only-export-components */
 import { Badge } from "@chakra-ui/react";
 import { isAfter, isBefore } from "date-fns";
-import { Column } from "react-table";
-import { ICampaign } from "./types";
+import { ICampaign } from "../../types";
 
 export const campaignsList: ICampaign[] = [
   {
@@ -77,13 +77,12 @@ export const campaignsList: ICampaign[] = [
   },
 ];
 
-// eslint-disable-next-line react-refresh/only-export-components
-const USDollar = new Intl.NumberFormat("en-US", {
+export const USDollar = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
 });
 
-function filterInDateRange(rows: any, id: any, filterValue: any[]) {
+export function filterInDateRange(rows: any, id: any, filterValue: any[]) {
   return rows.filter((row: any) => {
     const rowValue = row.values[id];
     return (
@@ -93,7 +92,11 @@ function filterInDateRange(rows: any, id: any, filterValue: any[]) {
   });
 }
 
-export const columns: Column<object>[] = [
+export const getIsActive = (startDate: Date, endDate: Date) =>
+  !isBefore(new Date(), new Date(startDate)) &&
+  !isAfter(new Date(), new Date(endDate));
+
+export const columns: any[] = [
   {
     Header: "ID",
     accessor: "id",
@@ -124,10 +127,7 @@ export const columns: Column<object>[] = [
     Filter: "",
     filter: "",
     Cell: ({ row: { original } }: any) => {
-      const isActive =
-        !isBefore(new Date(), new Date(original.startDate)) &&
-        !isAfter(new Date(), new Date(original.endDate));
-
+      const isActive = getIsActive(original.startDate, original.endDate);
       return (
         <Badge colorScheme={isActive ? "green" : "red"}>
           {isActive ? "Active" : "Inactive"}

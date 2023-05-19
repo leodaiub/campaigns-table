@@ -14,7 +14,7 @@ export default function Nav() {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box role="nav" bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
             <MdCampaign size={32} />
@@ -22,8 +22,12 @@ export default function Nav() {
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              <Button role="colorMode" onClick={toggleColorMode}>
+                {colorMode === "light" ? (
+                  <MoonIcon role="moon" />
+                ) : (
+                  <SunIcon role="sun" />
+                )}
               </Button>
             </Stack>
           </Flex>

@@ -25,14 +25,14 @@ export default function Pagination({
 IPagination | any) {
   return (
     <Flex mb={8} align={"center"} justify={"end"} mt={"40px"} gap={"5px"}>
-      <Text mr={2} fontSize="sm">
-        Page
+      <Text fontSize="sm">
         <Text ml={1} fontWeight="bold" as="span">
-          {pageIndex + 1} of {pageOptions.length}
+          Page {pageIndex + 1} of {pageOptions.length}
         </Text>
       </Text>
       <Button
         size={"xs"}
+        role="firstPage"
         onClick={() => gotoPage(0)}
         isDisabled={!canPreviousPage}
       >
@@ -41,15 +41,22 @@ IPagination | any) {
       <Button
         size={"xs"}
         onClick={() => previousPage()}
+        role="previousPage"
         isDisabled={!canPreviousPage}
       >
         <Icon boxSize={4} as={FiChevronLeft} />
       </Button>
-      <Button size={"xs"} onClick={() => nextPage()} isDisabled={!canNextPage}>
+      <Button
+        size={"xs"}
+        onClick={() => nextPage()}
+        role="nextPage"
+        isDisabled={!canNextPage}
+      >
         <Icon boxSize={4} as={FiChevronRight} />
       </Button>
       <Button
         size={"xs"}
+        role="lastPage"
         onClick={() => gotoPage(pageCount - 1)}
         isDisabled={!canNextPage}
       >

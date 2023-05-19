@@ -33,6 +33,7 @@ export default function SearchInput() {
       />
       {search && (
         <InputRightElement
+          role="clearSearch"
           cursor={"pointer"}
           children={
             <CloseIcon
