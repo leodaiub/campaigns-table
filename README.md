@@ -17,11 +17,11 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
+  * [About the Project](#about-the-project)
+  * [Built With](#built-with)
+  * [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
 
 
 <!-- ABOUT THE PROJECT -->
@@ -31,12 +31,12 @@
 
 ### Built With
 
-* [ReactJS]()
-* [Vite]()
-* [TypeScript]()
-* [Zustand]()
-* [Chakra-UI]()
-* [React Table]()
+* ReactJS
+* Vite
+* TypeScript
+* Zustand
+* Chakra-UI
+* React Table
 
 <!-- GETTING STARTED -->
 ## Getting Started
